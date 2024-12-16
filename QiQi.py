@@ -1,7 +1,6 @@
 from flask import Flask, request
 import os
 
-# Định nghĩa app
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,6 +15,5 @@ def callback():
         return seatalk_challenge, 200
     return "Invalid request", 400
 
-# Chạy ứng dụng
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
