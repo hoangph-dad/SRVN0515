@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello, Railway!"
+    return "Hello, Render!"
 
 @app.route('/callback', methods=['POST'])
 def callback():
@@ -28,6 +28,6 @@ def callback():
         return jsonify({"error": str(e)}), 400
 
 if __name__ == '__main__':
-    # Railway sẽ cung cấp cổng qua biến môi trường PORT
+    # Render cung cấp port thông qua biến môi trường PORT
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port)
